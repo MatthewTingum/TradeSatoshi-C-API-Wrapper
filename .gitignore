@@ -1,0 +1,6 @@
+TradeSatoshi/bin/
+TradeSatoshi/obj/
+TradeSatoshiDemo/bin/
+TradeSatoshiDemo/obj/
+*.exe
+*.dll

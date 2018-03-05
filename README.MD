@@ -8,7 +8,7 @@ This solution contains both a TradeSatoshi API Wrapper library and a program to 
 0. Enable API usage on your TradeSatoshi account.
 1. Build the TradeSatoshi library. 
 2. Add a reference to either the API Wrapper project or the compiled library.
-3. Create a 'TradeSatoshiAPI.TradeSatoshi' object using your `API Key` and `API Secret`.
+3. Create a `TradeSatoshiAPI.TradeSatoshi` object using your `API Key` and `API Secret`.
 4. Use the `TradeSatoshi` object to make API calls.
 
 

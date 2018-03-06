@@ -8,7 +8,7 @@ This project contains the TradeSatoshi API wrapper.
 0. Enable API usage on your TradeSatoshi account.
 1. Build the TradeSatoshi library. 
 2. Add a reference to either the API Wrapper project or the compiled library.
-3. Create a 'TradeSatoshiAPI.TradeSatoshi' object using your `API Key` and `API Secret`.
+3. Create a `TradeSatoshiAPI.TradeSatoshi` object using your `API Key` and `API Secret`.
 4. Use the `TradeSatoshi` object to make API calls.
 
 
@@ -19,4 +19,4 @@ Use the API Wrapper Libary and Test program at your own risk. Look at the code a
 
 ## Documentation
 
-Under Construction. See the demo program for usage examples.
+[Under Construction](https://github.com/MatthewTingum/TradeSatoshi-C-Sharp-API-Wrapper/wiki). See the demo program for usage examples.

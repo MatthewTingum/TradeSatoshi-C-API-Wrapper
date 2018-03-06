@@ -19,4 +19,4 @@ Use the API Wrapper Libary and Test program at your own risk. Look at the code a
 
 ## Documentation
 
-[Under Construction](https://github.com/MatthewTingum/TradeSatoshi-C-Sharp-API-Wrapper/wiki). See the demo program for usage examples.
+Documentation can be found on the [Wiki](https://github.com/MatthewTingum/TradeSatoshi-C-Sharp-API-Wrapper/wiki). See the demo program for usage examples.

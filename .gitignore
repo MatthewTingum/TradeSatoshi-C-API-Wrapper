@@ -2,5 +2,6 @@ TradeSatoshi/bin/
 TradeSatoshi/obj/
 TradeSatoshiDemo/bin/
 TradeSatoshiDemo/obj/
+.vs/
 *.exe
 *.dll

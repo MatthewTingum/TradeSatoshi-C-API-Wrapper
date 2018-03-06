@@ -62,7 +62,7 @@ namespace TradeSatoshiAPI
             return orderBook;
         }
 
-        // GetOrderBook
+        // GetBalance
         public async Task<Balance> GetBalance(string currency)
         {
             Balance balance = await tradeSatoshiApiWrapper.GetBalance(currency);
@@ -119,7 +119,7 @@ namespace TradeSatoshiAPI
             return order;
         }
 
-        // GetOrderBook
+        // GenerateAddress
         public async Task<GenerateAddress> GenerateAddress(string currency)
         {
             GenerateAddress generateAddress = await tradeSatoshiApiWrapper.GenerateAddress(currency);

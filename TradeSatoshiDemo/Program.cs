@@ -40,6 +40,7 @@ namespace TradeSatoshiDemo
                 Console.WriteLine("\t16: \\GetDeposits");
                 Console.WriteLine("\t17: \\GetWithdrawls");
                 Console.WriteLine("\t18: \\SubmitTransfer");
+                Console.WriteLine("\t19: \\GetTradePairChart");
                 Console.Write("\n\tOption: ");
                 string option = Console.ReadLine();
                 Console.WriteLine();
@@ -518,6 +519,47 @@ namespace TradeSatoshiDemo
                             transfer = tradeSatoshi.SubmitTransfer("GRLC", "username", 1).Result;
                             Console.WriteLine(@"\SubmitTransfer");
                             Console.WriteLine(String.Format("\t\tData:\t\t{0}", transfer.Data));
+                        }
+                        catch (Exception e)
+                        {
+                            Console.WriteLine(e.Message);
+                            break;
+                        }
+
+                        Console.WriteLine();
+                        break;
+
+                        // Internal API
+
+                    case "19":  // GetTradePairChart
+
+                        // Needs a cloudflare bypass
+                        TradePairChart tradePairChart = new TradePairChart();
+
+                        try
+                        {
+                            tradePairChart = tradeSatoshi.GetTradePairChart(2567).Result;
+                            foreach (double[] candle in tradePairChart.Candle)
+                            {
+                                Console.WriteLine(String.Format("Timestamp: {0}", candle[0]));
+                                Console.WriteLine(String.Format("Open: {0}", candle[1]));
+                                Console.WriteLine(String.Format("High: {0}", candle[2]));
+                                Console.WriteLine(String.Format("Low: {0}", candle[3]));
+                                Console.WriteLine(String.Format("Close: {0}", candle[4]));
+                                Console.WriteLine();
+                            }
+
+                            foreach (double[] volume in tradePairChart.Volume)
+                            {
+                                Console.WriteLine(String.Format("Timestamp: {0}", volume[0]));
+                                Console.WriteLine(String.Format("Volume: {0}", volume[1]));
+                                Console.WriteLine();
+                            }
+
+                            Console.WriteLine(String.Format("Low: {0}", tradePairChart.Low));
+                            Console.WriteLine(String.Format("High: {0}", tradePairChart.High));
+                            Console.WriteLine(String.Format("Last: {0}", tradePairChart.Last));
+                            Console.WriteLine();
                         }
                         catch (Exception e)
                         {

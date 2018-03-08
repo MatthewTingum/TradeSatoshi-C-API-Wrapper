@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Newtonsoft.Json.Linq;
 using System.Text;
 using System.Security.Cryptography;
+using TradeSatoshiAPI.CloudFlare;
 
 namespace TradeSatoshiAPI
 {  
@@ -30,6 +31,7 @@ namespace TradeSatoshiAPI
             _API_SECRET = apiSecret;
         }
 
+        // Public API
 
         // GetCurrencies
         public async Task<CurrencyList[]> GetCurrencies()
@@ -268,6 +270,8 @@ namespace TradeSatoshiAPI
                 return orderBook.Result;
             }
         }
+
+        // Private API
 
         //  GetBalance
         public async Task<Balance> GetBalance(string currency)
@@ -810,7 +814,7 @@ namespace TradeSatoshiAPI
 
             using (var client = new HttpClient())
             {
-
+                
                 // create the URL string.
                 string endpoint = "api/private/submittransfer";
 
@@ -851,6 +855,45 @@ namespace TradeSatoshiAPI
                 return transferEntity.Result;
             }
         }
+
+        // Internal API
+
+        // GetTradePairChart
+        public async Task<TradePairChart> GetTradePairChart(int tradePairID)
+        {
+
+            // 2567 = BTCP_BTC
+
+            //string market = String.Format("{0}_{1}", currency, tradingPair.ToString());
+
+            using (var client = new HttpClient(new ClearanceHandler()))
+            {
+                SetHttpClientProperties(client);
+
+                // create the URL string.
+                var url = string.Format("Exchange/GetTradePairChart?tradePairId={0}", tradePairID.ToString());
+
+                // make the request
+                var response = await client.GetAsync(url);
+
+                // parse the response and return the data.
+                var jsonResponseString = await response.Content.ReadAsStringAsync();
+
+                TradePairChart tradePairChart = new TradePairChart();
+
+                try
+                {
+                    tradePairChart = JsonConvert.DeserializeObject<TradePairChart>(jsonResponseString);
+                }
+                catch (Exception e)
+                {
+                    throw new Exception(_ParseError, e);
+                }
+
+                return tradePairChart;
+            }
+        }
+
 
         private void SetHttpClientProperties(HttpClient client)
         {

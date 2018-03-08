@@ -159,5 +159,17 @@ namespace TradeSatoshiAPI
             return transfer;
         }
 
+
+        // Internal API
+
+        // GetTradePairChart
+        public async Task<TradePairChart> GetTradePairChart(int tradePairID)
+        {
+            TradePairChart tradePairChart = await tradeSatoshiApiWrapper.GetTradePairChart(tradePairID);
+
+            return tradePairChart;
+        }
+
+
     }
 }

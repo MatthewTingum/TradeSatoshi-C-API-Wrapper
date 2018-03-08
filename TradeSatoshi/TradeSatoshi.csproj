@@ -43,6 +43,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CloudFlare\ChallengeSolution.cs" />
+    <Compile Include="CloudFlare\ChallengeSolver.cs" />
+    <Compile Include="CloudFlare\ClearanceHandler.cs" />
+    <Compile Include="CloudFlare\CloudFlareClearanceException.cs" />
+    <Compile Include="CloudFlare\CookieExtensions.cs" />
+    <Compile Include="CloudFlare\HttpHeader.cs" />
+    <Compile Include="CloudFlare\HttpMessageHandlerExtensions.cs" />
     <Compile Include="Entities\Balance.cs" />
     <Compile Include="Entities\Balances.cs" />
     <Compile Include="Entities\CancelOrder.cs" />
@@ -59,6 +66,7 @@
     <Compile Include="Entities\SubmitWithdraw.cs" />
     <Compile Include="Entities\Ticker.cs" />
     <Compile Include="Entities\TradeHistory.cs" />
+    <Compile Include="Entities\TradePairChart.cs" />
     <Compile Include="Entities\Transfer.cs" />
     <Compile Include="Entities\Withdrawls.cs" />
     <Compile Include="Enum\CancelType.cs" />

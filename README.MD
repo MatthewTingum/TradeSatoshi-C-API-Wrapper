@@ -1,3 +1,9 @@
+# Warning!
+
+Tradesatoshi is defunct. They had no problem stealing your crypto before.
+They no longer exist now. Probably for the better. I leave this repo open
+for posterity. There is no use for this repo. Come and gander if you please.
+
 <h1>TradeSatoshi C# API Wrapper</h1>
 
 This solution contains both a TradeSatoshi API Wrapper library and a program to test the library. The wrapper supports both public and private endpoints.
